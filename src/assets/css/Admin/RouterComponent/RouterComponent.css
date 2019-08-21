@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 80px;
+    left: 1rem;
+}
+
+.router_button {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    align-items: center;
+    border: none;
+    background-color: white;
+}
+
+.router_button:focus {
+    outline: none;
+}
+
+.router_button span {
+    font-family: inherit;
+}
+
+.router_button span:hover {
+    color: #27226bc5;
+    cursor: pointer;
+}
