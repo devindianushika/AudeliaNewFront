@@ -1,277 +1,278 @@
 .modal_container {
-    position: fixed;
-    left: 50%;
-    top: 5%;
-    width: 50%;
-    height: 80%;
-    max-height: 81%;
-    background-color: white;
-    box-shadow: 1rem 1rem 3rem 2rem rgba(189, 186, 186, 0.445);
-    z-index: 400;
+  position: fixed;
+  left: 50%;
+  top: 5%;
+  width: 50%;
+  height: 80%;
+  max-height: 81%;
+  background-color: white;
+  box-shadow: 1rem 1rem 3rem 2rem rgba(189, 186, 186, 0.445);
+  z-index: 400;
 
-    -webkit-transform: translate(-50%, -0%);
-    -ms-transform: translate(-50%, -0%);
-    transform: translate(-50%, -0%);
+  -webkit-transform: translate(-50%, -0%);
+  -ms-transform: translate(-50%, -0%);
+  transform: translate(-50%, -0%);
 
-    animation-name: modal_animation;
-    animation-duration: 500ms;
+  animation-name: modal_animation;
+  animation-duration: 500ms;
 }
 
 .modal:before {
-    content: "";
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.534);
-    /* background-color: rgba(255, 255, 255, 0.767); */
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 400;
+  content: "";
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.534);
+  /* background-color: rgba(255, 255, 255, 0.767); */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 400;
 }
 
 @keyframes modal_animation {
-    0% {
-        height: 0%;
-    };
-    20% {
-        height: 20%;
-    };
-    40% {
-        height: 40%;
-    };
-    60% {
-        height: 60%;
-    };
-    80% {
-        height: 80%;
-    };
-    90% {
-        height: 85%;
-    };
-    100% {
-        height: 90%;
-    };
+  0% {
+    height: 0%;
+  }
+  20% {
+    height: 20%;
+  }
+  40% {
+    height: 40%;
+  }
+  60% {
+    height: 60%;
+  }
+  80% {
+    height: 80%;
+  }
+  90% {
+    height: 85%;
+  }
+  100% {
+    height: 90%;
+  }
 }
 
 .modal_closeButton {
-    position: absolute;
-    top: 0;
-    right: -40px;
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
-   
+  position: absolute;
+  top: 0;
+  right: -40px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .modal_closeButton:focus {
-    outline: none;
+  outline: none;
 }
 
 .modal_closeButton:hover {
-    background: #f5f5f0;
-    cursor: pointer;
+  background: #f5f5f0;
+  cursor: pointer;
 }
 
 .dropDown_button {
-    display: flex;
-    flex-direction: row;
-    padding: 0.5rem 0;
-    width: 60%;
-    justify-content: space-between;
-    border: none;
-    background-color: white;
-    cursor: pointer;
-    border: 1px solid rgb(129, 129, 129);
-    /* position: absolute;
+  display: flex;
+  flex-direction: row;
+  padding: 0.5rem 0;
+  width: 60%;
+  justify-content: space-between;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid rgb(129, 129, 129);
+  /* position: absolute;
     top: 2rem;
     left: 50%; */
-    align-items: center;
-    
+  align-items: center;
 }
 
 .dropDown_button span {
-    font-family: inherit;
-    font-size: 1rem;
-    padding-left: 1rem;
-    width: 60%;
+  font-family: inherit;
+  font-size: 1rem;
+  padding-left: 1rem;
+  width: 60%;
 }
 
 .dropDown_button:hover {
-    background-color: rgb(238, 234, 234);
+  background-color: rgb(238, 234, 234);
 }
 
 .dropDown_container_hide {
-    display: none;
+  display: none;
 }
 
 .dropDown_container {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.432);
-    z-index: 400;
-    position: absolute;
-    left: 40%;
-    top: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.432);
+  z-index: 400;
+  position: absolute;
+  left: 40%;
+  top: 100%;
 }
 
 .dropDown_container button {
-    background-color: white;
-    border: none;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
-    padding-left: 0.5rem;
-    animation-name: dropdown_button_ani;
-    animation-duration: 300ms;
-    font-family: inherit;
-    text-align: start;
-    z-index: 500;
+  background-color: white;
+  border: none;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  animation-name: dropdown_button_ani;
+  animation-duration: 300ms;
+  font-family: inherit;
+  text-align: start;
+  z-index: 500;
 }
 
 .dropDown_container button:focus {
-    outline: none;
+  outline: none;
 }
 
 .dropDown_container button:hover {
-    color: white;
-    background-color: #27226bc5;
-    z-index: 500;
+  color: white;
+  background-color: #27226bc5;
+  z-index: 500;
 }
 
 @keyframes dropdown_button_ani {
-    0% {
-        padding-bottom: 0rem;
-    };
-    20% {
-        padding-bottom: 0.1rem;
-    };
-    40% {
-        padding-bottom: 0.2rem;
-    };
-    60% {
-        padding-bottom: 0.3rem;
-    };
-    80% {
-        padding-bottom: 0.4rem;
-    };
-    100% {
-        padding-bottom: 0.5rem;
-    };
+  0% {
+    padding-bottom: 0rem;
+  }
+  20% {
+    padding-bottom: 0.1rem;
+  }
+  40% {
+    padding-bottom: 0.2rem;
+  }
+  60% {
+    padding-bottom: 0.3rem;
+  }
+  80% {
+    padding-bottom: 0.4rem;
+  }
+  100% {
+    padding-bottom: 0.5rem;
+  }
 }
 
 .form_container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .input_container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 50%;
-    position: relative;
-    margin-bottom: 0.7rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+  position: relative;
+  margin-bottom: 0.7rem;
 }
 
 .input_container span {
-    width: 40%;
+  width: 40%;
 }
 
 .assign_container {
-    display: flex;
-    flex-direction: row;
-    width: 40%;
+  display: flex;
+  flex-direction: row;
+  width: 40%;
 }
 
 .assign_container span {
-    width: 40%;
+  width: 40%;
 }
 
 .radio_container {
-    margin-right: 1rem;
+  margin-right: 1rem;
 }
 
 .regiNum_container {
-    width: 60%;
-    height: 30vh;
-    border: 1px solid rgb(129, 129, 129);
-    position: relative;
-    margin-top: 1rem;
-    animation-name: regiNum_container_ani;
-    animation-duration: 500ms;
+  width: 60%;
+  height: 44vh;
+  border: 1px solid rgb(129, 129, 129);
+  position: relative;
+  margin-top: 1rem;
+  animation-name: regiNum_container_ani;
+  animation-duration: 500ms;
 }
 
 @keyframes regiNum_container_ani {
-    0% {
-        height: 0vh;
-    };
-    20% {
-        height: 5vh;
-    };
-    40% {
-        height: 10vh;
-    };
-    60% {
-        height: 15vh;
-    };
-    80% {
-        height: 20vh;
-    };
-    100% {
-        height: 30vh;
-    };
+  0% {
+    height: 0vh;
+  }
+  20% {
+    height: 5vh;
+  }
+  40% {
+    height: 10vh;
+  }
+  60% {
+    height: 15vh;
+  }
+  80% {
+    height: 20vh;
+  }
+  100% {
+    height: 30vh;
+  }
 }
 
 .regiNum_container h3 {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 .regiNum_selection_container {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0.5rem;
-    position: relative;
-    width: 100%;
-    margin-left: 1rem;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+  position: relative;
+  width: 100%;
+  margin-left: 1rem;
 }
 
-
 .regiNum_selection_container span {
-    width: 40%;
+  width: 40%;
 }
 
 .regiNum_selection_container button {
-    width: 40%;
+  width: 40%;
 }
 
 .button_container {
-    display: flex;
-    flex-direction: row;
-    width: 60%;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .button_container button {
-    width: 50%;
-    margin-right: 0.5rem;
-    padding: 0.5rem 0;
-    border: none;
-    color: white;
-    background-color: #27226bc5;
-    font-family: inherit;
-    font-weight: 600;
+  width: 50%;
+  margin-right: 0.5rem;
+  padding: 0.5rem 0;
+  border: none;
+  color: white;
+  background-color: #27226bc5;
+  font-family: inherit;
+  font-weight: 600;
 }
 
 .button_container button:focus {
-    outline: none;
+  outline: none;
 }
 
 .button_container button:hover {
-    background-color: #1b1847c5;
+  background-color: #1b1847c5;
+}
+
+.assignteacherdiv {
+  width: 80%;
+  margin-bottom: 5%;
 }
