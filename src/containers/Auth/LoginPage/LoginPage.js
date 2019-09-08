@@ -9,7 +9,7 @@ class LoginPage extends Component {
     render() {
         return (
             <div>
-                <NavigationBarLogin />
+                
                 <div className={styles.main_container}>
                     <div className={styles.form_container}>
                         <h2 className={styles.login_header}>Login</h2>
