@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import {Redirect} from 'react-router-dom';
-import  '../../../assets/css/Admin/Register/Register.css';
+import AdminNavigationBar from '../../../components/AdminNavigationBar/AdminNavigationBar';
+import  styles from '../../../assets/css/Admin/Register/Register.css';
+import { Link } from 'react-router-dom';
 // import axios from 'axios';
 
 
@@ -84,12 +86,13 @@ class ParentRegisPage extends Component {
   render() {
     if(true){
     return (
-      <div className="main-form">
-        <div className="form-wrapper">
+      <div><AdminNavigationBar/>
+      <div className={styles.mainform}>
+        <div className={styles.formwrapper}>
           <h2>PARENT REGISTRATION FORM</h2>
           <br />
           <form onSubmit={this.onSubmit}>
-            <div className="secondary">
+            <div className={styles.secondary}>
               <label htmlFor="Registration Number">
                 <b> Registration Number</b>
               </label>
@@ -103,7 +106,7 @@ class ParentRegisPage extends Component {
               />
             </div>
 
-            <div className="secondary">
+            <div className={styles.secondary}>
               <label htmlFor="Full name">
                 <b>Full name</b>
               </label>
@@ -118,7 +121,7 @@ class ParentRegisPage extends Component {
               />
             </div>
 
-            <div className="secondary">
+            <div className={styles.secondary}>
               <label htmlFor="Email">
                 <b>Email</b>
               </label>
@@ -132,7 +135,7 @@ class ParentRegisPage extends Component {
               />
             </div>
 
-            <div className="secondary">
+            <div className={styles.secondary}>
               <label htmlFor="Address">
                 <b>Home Address</b>
               </label>
@@ -143,7 +146,7 @@ class ParentRegisPage extends Component {
                 onChange={this.onChange}
                 id="currentaddress"
                 className="form-control"
-              />
+                />
             </div>
 
             <div className="secondary">
@@ -238,17 +241,21 @@ class ParentRegisPage extends Component {
                 className="btn btn-primary"
               />
             </div>
-
-            <div className="reset">
-              <label htmlFor="reset" />
-              <input class="btn btn-primary" type="reset" value="Reset" />
+            <div className={styles.reset1}>
+            <label htmlFor='reset'></label>
+            <input className='btn btn-primary' type='reset' value='Reset'
+           />
             </div>
-
-            
-          </form>
+            </form>
+            <div></div>
+              <Link to="/dashboard">
+                Back
+              </Link>
+            </div>
         </div>
-      </div>
-    )}else{
+        </div>
+    )}
+    else{
       return(
         <Redirect to="/" />  
       )

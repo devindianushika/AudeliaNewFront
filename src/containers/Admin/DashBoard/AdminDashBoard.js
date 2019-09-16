@@ -10,6 +10,7 @@ class AdminDashBoard extends Component {
   render() {
     return (
       <div>
+        <AdminNavigationBar/>
         <NewsContainer />
         <Route
           path={this.props.match.path}

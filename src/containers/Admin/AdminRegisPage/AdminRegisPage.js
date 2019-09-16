@@ -1,7 +1,8 @@
 import React,{Component} from 'react'
 // import axios from 'axios';
 import { Redirect,Link } from 'react-router-dom';
-import  '../../../assets/css/Admin/Register/Register.css';
+import AdminNavigationBar from '../../../components/AdminNavigationBar/AdminNavigationBar';
+import  styles from '../../../assets/css/Admin/Register/Register.css';
 
 class AdminRegisPage extends Component{
 
@@ -88,11 +89,14 @@ render(){
 
   if(true){
     return(
-        <div  className='main-form'>
-        <div className="form-wrapper">
+      <div>
+      <AdminNavigationBar/>
+
+        <div  className={styles.mainform}>
+        <div className={styles.formwrapper}>
             <h2>ADMIN REGISTRATION FORM</h2><br></br>
             <form id="form" onSubmit = {this.onSubmit}>
-            <div className='secondary'>
+            <div className={styles.secondary}>
 
 
             <label htmlFor=" Registration Number">
@@ -194,7 +198,7 @@ render(){
             <div>
                 {this.state.error && (<p><font color="red">Those passwords didn't mathed!</font></p>)}
             </div>
-            
+            <div className={styles.reset1}>
             <div className='submit'>
             <label htmlFor='submit'>
             </label><input 
@@ -202,14 +206,14 @@ render(){
             value='Add Admin'
             className='btn btn-primary'  />
             </div>
-
-            <div className='reset'>
+            </div>
+            <div className={styles.reset}>
             <label htmlFor='reset'></label>
-            <input class='btn btn-primary' type='reset' value='Reset'
+            <input className='btn btn-primary' type='reset' value='Reset'
            />
             </div>
             </form>
-            <div>
+            <div></div>
               <Link to="/dashboard">
                 Back
               </Link>
