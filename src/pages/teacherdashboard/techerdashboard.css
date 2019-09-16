@@ -1,0 +1,16 @@
+.teacherdashmain {
+  width: 18rem;
+  height: 77.5vh;
+  box-shadow: 1px 1px 6px 1px rgba(0, 0, 0, 0.233);
+  position: fixed;
+  top: 115px;
+  left: 1rem;
+}
+
+.classselectroteacherdash {
+  margin-top: 20%;
+}
+
+.teacherdashmyclassbtn {
+  width: 5000px;
+}

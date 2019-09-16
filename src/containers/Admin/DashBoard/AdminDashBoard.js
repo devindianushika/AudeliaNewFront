@@ -11,7 +11,6 @@ class AdminDashBoard extends Component {
     return (
       <div>
         <NewsContainer />
-        <AdminNavigationBar />  
         <Route
           path={this.props.match.path}
           exact={true}

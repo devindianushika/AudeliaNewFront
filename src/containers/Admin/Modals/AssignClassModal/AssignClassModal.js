@@ -26,28 +26,28 @@ const optionsstsudents = [
   { value: "dua lipa", label: "dua lipa" }
 ];
 
-const customStyles1 = {
-  option: (provided, state) => ({
-    ...provided,
-    borderBottom: "1px dotted pink",
-    color: state.isSelected ? "red" : "blue",
-    padding: 20
-  }),
-  control: () => ({
-    // none of react-select's styles are passed to <Control />
-    width: 200
-  }),
-  singleValue: (provided, state) => {
-    const opacity = state.isDisabled ? 0.5 : 1;
-    const transition = "opacity 300ms";
+// const customStyles1 = {
+//   option: (provided, state) => ({
+//     ...provided,
+//     borderBottom: "1px dotted pink",
+//     color: state.isSelected ? "red" : "blue",
+//     padding: 20
+//   }),
+//   control: () => ({
+//     // none of react-select's styles are passed to <Control />
+//     width: 2000
+//   }),
+//   singleValue: (provided, state) => {
+//     const opacity = state.isDisabled ? 0.5 : 1;
+//     const transition = "opacity 300ms";
 
-    return { ...provided, opacity, transition };
-  }
-};
+//     return { ...provided, opacity, transition };
+//   }
+// };
 
 const customStyles = {
   control: () => ({
-    width: 200
+    width: 500
   })
 };
 
@@ -173,7 +173,6 @@ class AssignClassModal extends Component {
                     //   defaultValue={[colourOptions[2], colourOptions[3]]}
                     // styles={customStyles}
 
-                    style={{ width: "80000px" }}
                     isMulti
                     name="colors"
                     options={optionsTeachernamelist}
