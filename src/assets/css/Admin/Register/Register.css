@@ -1,0 +1,82 @@
+.main-form {
+    height:140vh;
+    width:100x;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black(56, 178, 219);
+    background-image: url("'../../../assets/css/Admin/Register/child.jpg");  
+    background-repeat: no-repeat;
+    background-size: 1349px 480px;
+
+  }
+  .main-form1 {
+    height:131vh;
+    width:100x;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(3, 12, 15);
+    /* background-image: url("../resources/images/boys.jpg");  */
+    background-repeat: no-repeat;
+    background-size: 1540px 780px;
+  }
+
+  .form-wrapper{
+    width: 49px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    border-radius: 10px;
+/*box-shadow: 0px 10px 50px #555;*/
+background-color: #a5a2a2ad;
+
+  }
+
+  
+  
+  .primary {
+    color: rgb(12, 12, 12);
+    text-align: center;
+    font-style: italic;
+  }
+  
+  .header{
+    background-color: lightblue;
+    padding:0px;
+    text-align: center;
+  }
+  .secondary{
+       /* text-align: ;*/
+        width: 100%;
+       /* padding: 12px 20px;
+        margin: 20px 0;
+        box-sizing: border-box;
+        border: 3px solid black;
+        border-radius: 4px;*/
+        display: flex;
+        flex-wrap: wrap;
+  }
+
+  .fullname{
+    margin-right:1%;
+   
+  }
+  .fullname,
+  .Password{
+    display: flex;
+    flex-direction:column;
+    margin-bottom: 15px;
+  
+
+  }
+  
+ 
+  .submit{
+    text-align: right;
+    
+    
+    }
+  
