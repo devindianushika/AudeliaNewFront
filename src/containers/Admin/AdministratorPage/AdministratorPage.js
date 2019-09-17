@@ -29,6 +29,8 @@ class AdministratorPage extends Component {
       this.props.history.push("/teacherregis");
     } else if (event.currentTarget.id === "Admin") {
       this.props.history.push("/adminregis");
+    } else if (event.currentTarget.id === "parent") {
+      this.props.history.push("/parentregis");
     }
 
     this.setState({
@@ -118,6 +120,9 @@ class AdministratorPage extends Component {
             </button>
             <button id="Admin" onClick={this.handleSelectedPerson}>
               Admin
+            </button>
+            <button id="parent" onClick={this.handleSelectedPerson}>
+              Parent
             </button>
           </div>
         </div>
