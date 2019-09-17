@@ -37,7 +37,7 @@ class AdminNavigationBar extends Component {
               className={styles.profile_name_button}
               onClick={this.handleOpenDropDown}
             >
-              <span>{this.state.uname}</span>
+              <span>{this.props.username}</span>
               <div
                 className={styles.dropdown_icon}
                 hidden={!this.state.islogged}
