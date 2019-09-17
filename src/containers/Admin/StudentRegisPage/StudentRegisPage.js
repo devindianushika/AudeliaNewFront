@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
 import {Redirect,Link} from "react-router-dom";
-// import axios from 'axios';
-import  '../../../assets/css/Admin/Register/Register.css';
-
+import axios from 'axios';
+import styles from '../../../assets/css/Admin/Register/Register.css';
+import AdminNavigationBar from '../../../components/AdminNavigationBar/AdminNavigationBar';
 
 
 class StudentRegisPage extends Component{
@@ -46,44 +46,44 @@ class StudentRegisPage extends Component{
           contactNumber : this.state.contactNumber
         };
 
-    //     let confirmPassword = this.state.confirmPassword;
-    //     let x = /\bS[0-9]{3}$/.test(user.registrationNumber);       
+        let confirmPassword = this.state.confirmPassword;
+        let x = /\bS[0-9]{3}$/.test(user.registrationNumber);       
     
-    // if((x === true) && (confirmPassword.localeCompare(user.password) === 0) && (user.gender !== "")){
-    //     axios
-    //     .post('http://localhost:8090/registration/student',user,'application/json;charset=UTF-8')
-    //     .then(res => {
-    //         //console.log(res)
+    if((x === true) && (confirmPassword.localeCompare(user.password) === 0) && (user.gender !== "")){
+        axios
+        .post('http://localhost:8090/registration/student',user,'application/json;charset=UTF-8')
+        .then(res => {
+            //console.log(res)
 
-    //         if(res.data){
-    //             this.setState({error:true});
-    //             alert("Already registered!");
-    //           }else{
-    //               alert("Registered!");
+            if(res.data){
+                this.setState({error:true});
+                alert("Already registered!");
+              }else{
+                  alert("Registered!");
 
-    //               this.props.history.push({
-    //                 pathname: '/registerParent',
-    //                 search: '?query=abc',
-    //                 state: { detail: user.registrationNumber }
-    //               })
+                  this.props.history.push({
+                    pathname: '/registerParent',
+                    search: '?query=abc',
+                    state: { detail: user.registrationNumber }
+                  })
 
-    //           }
-    //     })
-    //     .catch(err => {
-    //       this.setState({error:true})
-    //     })
+              }
+        })
+        .catch(err => {
+          this.setState({error:true})
+        })
 
-    //   }      
-    //   if(x === false){
-    //     alert("Registration number is Invalid format!");
-    //   }
+      }      
+      if(x === false){
+        alert("Registration number is Invalid format!");
+      }
 
-    //   if(user.gender === "")
-    //     alert("Please enter your gender!");
+      if(user.gender === "")
+        alert("Please enter your gender!");
 
-    //   if(confirmPassword.localeCompare(user.password) !== 0){
-    //     this.setState({error:true})
-    //   }
+      if(confirmPassword.localeCompare(user.password) !== 0){
+        this.setState({error:true})
+      }
     }
 
     
@@ -91,10 +91,11 @@ class StudentRegisPage extends Component{
     render() {
       if(true){
         return(
-          
-            <div  className="main-form">
-            <div className="form-wrapper">
-                <h2>STUDENT REGISTRATION FORM</h2><br></br>
+          <div><AdminNavigationBar/>
+            <div  className={styles.studentmainform}>
+            <div className={styles.studentformwrapper}>
+            <div className={styles.primary}>
+                <h2>STUDENT REGISTRATION FORM</h2><br></br></div>
                 <form onSubmit = {this.onSubmit}> 
                 <div className='secondary'>
                 <label htmlFor="Registration Number">
@@ -197,18 +198,18 @@ class StudentRegisPage extends Component{
                 id='confirmPassword'
                 className="form-control"/><br></br><br></br>
                 </div>
-<br></br>
+
 
                 <div className="secondary">
                 <label htmlFor="EnterParentRegistrationNumber">
-                <b>If Parent alreay exist in the syastem Enter Parent Registration Number</b></label><input required
+                <b>If Parent already exist in the system Enter Parent Registration Number</b></label><input required
                 type='text' 
                 name='EnterParentRegistrationNumber'
                 placeholder='Enter Parent RegistrationNumber'
                 onChange={this.onChange}
                 id='EnterParentRegistrationNumbercontactnumber'
                 className="form-control"/>
-                </div>
+                </div><br></br>
 
                  
             <div>
@@ -216,34 +217,32 @@ class StudentRegisPage extends Component{
               </div>
             
                 
-
-
-                <div className='submit'>
-                <label htmlFor='submit'>
-                </label>
+               
                 
-                    <input
-                    type='submit'
-                    value='Add Student'
-                    className='btn btn-primary'  />
-                
-                </div>
+                <div className={styles.reset1}>
+            <div className='submit'>
+            <label htmlFor='submit'>
+            </label><input 
+            type='submit'
+            value='Add Student'
+            className='btn btn-primary'  />
+            </div>
+            </div>
 
-                <div className='reset'>
-                <label htmlFor='reset'></label>
-                <input class='btn btn-primary' type='reset' value='Reset'
-               />
-                </div>
-                </form>
-                <div>
-              <Link to="/dashboard">
+                <div className={styles.reset}>
+            <label htmlFor='reset'></label>
+            <input className='btn btn-primary' type='reset' value='Reset'
+           />
+            </div>
+            </form>
+            <div></div>
+              <Link to="/admin">
                 Back
               </Link>
             </div>
-            </div>
-            </div>
-        )
-        }else{
+        </div>
+        </div>
+    )}else{
           return(
             <Redirect to="/" />  
         )

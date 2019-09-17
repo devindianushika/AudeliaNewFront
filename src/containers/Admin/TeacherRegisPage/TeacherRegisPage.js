@@ -1,10 +1,13 @@
 import React,{Component} from 'react'
-import axios from 'axios';
-import { Redirect,Link } from 'react-router-dom';
+ import axios from 'axios';
 import AdminNavigationBar from '../../../components/AdminNavigationBar/AdminNavigationBar';
 import  styles from '../../../assets/css/Admin/Register/Register.css';
+import { Redirect,Link } from 'react-router-dom';
 
-class AdminRegisPage extends Component{
+
+
+
+class TeacherRegisPage extends Component{
 
     constructor() {
         super();
@@ -13,13 +16,11 @@ class AdminRegisPage extends Component{
           registrationNumber:"",
           fullName:"",
           gender:"",
-          password: "",
-          destination : "",
           email : "",
+          password: "",
           contactNumber : "",
           confirmPassword : "",
           error : false
-          
         };
     
         this.onChange = this.onChange.bind(this);
@@ -30,78 +31,75 @@ class AdminRegisPage extends Component{
       onChange(e) {
         this.setState({ [e.target.name]: e.target.value });
       }
-      
     
       onSubmit(e) {
         e.preventDefault();
     
         const user = {
-            registrationNumber: this.state.registrationNumber,
-            fullName: this.state.fullName,
-            gender: this.state.gender,
-            password: this.state.password,
-            destination : this.state.designation,
-            email : this.state.email,
-            contactNumber : this.state.contactNumber
+        registrationNumber : this.state.registrationNumber,
+        fullName : this.state.fullName,
+        gender : this.state.gender,
+        email : this.state.email,
+          password: this.state.password,
+          contactNumber : this.state.contactNumber
         };
 
         let confirmPassword = this.state.confirmPassword;
-        let x = /\bA[0-9]{3}$/.test(user.registrationNumber);
+        let x = /\bT[0-9]{3}$/.test(user.registrationNumber); 
+        
+        //console.log(user.gender);
     
         if((x === true) && (confirmPassword.localeCompare(user.password) === 0) && (user.gender !== "")){
-                  //console.log(user)
-          
-        // register request          
+        console.log(user)
+    
+        
         axios
-        .post('http://localhost:8090/registration/admin',user,'application/json;charset=UTF-8')
+        .post('http://localhost:8090/registration/teacher',user,'application/json;charset=UTF-8')
         .then(res => {
             //console.log(res);
             if(res.data){
-                this.setState({error:true});
-                alert("Already registered!");
-              }else{
-                  alert("Registered!"); 
-              }
+              this.setState({error:true});
+              alert("Already registered!");
+            }else{
+                alert("Registered!");
+                this.props.history.push("/registerTeacher");
+            }
         })
         .catch(err => {
           this.setState({error:true}) 
-          //console.log(err);
-        }) 
+            //console.log(err);
+        })
         
-      }
+      } 
 
       if(x === false){
         alert("Registration number is Invalid format!");
       }
 
       if(user.gender === "")
-      alert("Please enter your gender!");
+        alert("Please enter your gender!");
 
       if(confirmPassword.localeCompare(user.password) !== 0){
         this.setState({error:true})
       }
-
-
-    }
+        
+      }
 
 
 render(){
-
   if(true){
     return(
-      <div>
-      <AdminNavigationBar/>
-
-        <div  className={styles.adminmainform}>
-        <div className={styles.adminformwrapper}>
-        <div className={styles.primary}> 
-            <h2>ADMIN REGISTRATION FORM</h2><br></br></div>
-            <form id="form" onSubmit = {this.onSubmit}>
-            <div className={styles.secondary}>
+        <div><AdminNavigationBar/>
+        <div  className={styles.teachermainform}>
+        <div className={styles.teacherformwrapper}>
+        <div className={styles.primary}>  
+            <h2>TEACHER REGISTRATION FORM</h2><br></br></div>
+            <form  onSubmit={this.onSubmit}>
+            <div className='secondary'>
 
 
             <label htmlFor=" Registration Number">
-            <b>Registration Number</b></label><input required
+            <b>Registration Number</b></label><input
              type='text' 
              name='registrationNumber'
             placeholder='enter registration number'
@@ -112,7 +110,7 @@ render(){
 
 
             <div className="fullname">
-            <label htmlFor="Full name"><b>Full name</b></label><input required
+            <label htmlFor="Full name"><b>Full name</b></label><input
              type='text'
              name='fullName'
              placeholder='enter name'
@@ -123,7 +121,7 @@ render(){
 
             <div >
             <label htmlFor="E-mail">
-            <b>E-mail</b></label><input required
+            <b>E-mail</b></label><input
             type='email'
             name='email'
             placeholder='example@gmail.com'
@@ -135,7 +133,7 @@ render(){
             
             <div >
             <label htmlFor="contactnumber">
-            <b>Contact number</b></label><input required
+            <b>Contact number</b></label><input
             type='text' 
             name='contactNumber'
             placeholder='enter contact number'
@@ -143,21 +141,11 @@ render(){
             id='contact number'
             className="form-control"/>
             </div>
-
-            <div >
-            <label htmlFor="designation">
-            <b>designation</b></label><input required
-            type='text' 
-            name='designation'
-            placeholder='enter designation'
-            onChange={this.onChange}
-            id='designation'
-            className="form-control"/>
-            </div>
+           
 
            <div >
            <label htmlFor="Gender">              
-           <b>Gender</b></label><br></br><input 
+           <b>Gender</b></label><br></br><input
            type="radio"
            name="gender"
            value="male"
@@ -171,12 +159,11 @@ render(){
             value="female" 
             onChange={this.onChange}
             /*className="form-control"*//> Female</div>
-
 <br></br>
 
             <div className="Password">
             <label htmlFor="Password">
-            <b>Password</b><br></br></label><input required
+            <b>Password</b><br></br></label><input
             type='password'
             name='password'
             placeholder='enter password' 
@@ -187,45 +174,57 @@ render(){
 
             <div className="Password">
             <label htmlFor="Password">
-            <b>Confirm Password</b><br></br></label><input required
+            <b>Confirm Password</b><br></br></label><input
             type='password'
             name='confirmPassword'
             placeholder='enter password' 
             onChange={this.onChange} 
             id='confirmPassword'
-            className="form-control"/>
-            </div><br></br><br></br><br></br><br></br><br></br>
+            className="form-control"/><br></br>
+            </div>
+
+             
             <div>
                 {this.state.error && (<p><font color="red">Those passwords didn't mathed!</font></p>)}
-            </div>
-            <div className={styles.reset1}>
+              </div>
+            
+            
+            
+
+
+              <div className={styles.reset1}>
             <div className='submit'>
             <label htmlFor='submit'>
             </label><input 
             type='submit'
-            value='Add Admin'
+            value='Add Teacher'
             className='btn btn-primary'  />
             </div>
             </div>
-            <div className={styles.reset}>
+
+                <div className={styles.reset}>
             <label htmlFor='reset'></label>
             <input className='btn btn-primary' type='reset' value='Reset'
            />
             </div>
             </form>
             <div></div>
-              <Link to="/dashboard">
+              <Link to="/admin">
                 Back
               </Link>
             </div>
         </div>
         </div>
-    )}else{
-      return(
-        <Redirect to="/" />  
     )
-    }
-}
+  }else{
+    return(
+      <Redirect to="/" />  
+  )
+  }
 }
 
-export default AdminRegisPage;
+
+
+}
+
+export default TeacherRegisPage

@@ -1,46 +1,100 @@
-.mainform {
-    height:130vh;
+.adminmainform {
+    height:140vh;
     width:1580px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color:rgb(170, 163, 235);
-    /* background-image: url("'../../../assets/css/Admin/Register/child.jpg");   */
+    background-image: url("../../../../assets/SchoolImages/admin.jpg"); 
     background-repeat: no-repeat;
-    background-size: 1449px 880px;
+    background-size: 1539px 1010px;
 
   } 
-  .mainform1 {
-    height:131vh;
-    width:100x;
+  .teachermainform {
+    height:112vh;
+    width:1580px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(131, 212, 240);
-    /* background-image: url("../resources/images/boys.jpg");  */
+    /* background-color:rgb(170, 163, 235); */
+    background-image: url("../../../../assets/SchoolImages/Teacher.jpg"); 
     background-repeat: no-repeat;
-    background-size: 1540px 880px;
+    background-size: 1549px 820px;
+
+  } 
+  .studentmainform {
+    height:140vh;
+    width:1580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   /* background-color:rgb(170, 163, 235);*/
+     background-image: url("../../../../assets/SchoolImages/SchoolchildrenInUniform.jpg");   
+    background-repeat: no-repeat;
+    background-size: 1559px 1090px;
+  }
+  .parentmainform {
+    height:135vh;
+    width:1580px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color:rgb(170, 163, 235); */
+    background-image: url("../../../../assets/SchoolImages/parents.jpg"); 
+    background-repeat: no-repeat;
+    background-size: 1549px 980px;
   }
 
-  .formwrapper{
+  .adminformwrapper{
     width: 649px;
     display: flex;
     flex-direction: column;
     padding: 20px 40px;
     border-radius: 10px;
 /*box-shadow: 0px 10px 50px #555;*/
-background-color:whitesmoke;
+background-color:hsla(0, 0%, 96%, 0.39);
 
   }
 
-  
+  .studentformwrapper{
+    width: 649px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    border-radius: 10px;
+/*box-shadow: 0px 10px 50px #555;*/
+background-color:hsla(0, 0%, 96%, 0.39);
+
+  }
+  .teacherformwrapper{
+    width: 649px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    border-radius: 10px;
+/*box-shadow: 0px 10px 50px #555;*/
+background-color:hsla(0, 0%, 96%, 0.39);
+
+  }
+  .parentformwrapper{
+    width: 649px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px;
+    border-radius: 10px;
+/*box-shadow: 0px 10px 50px #555;*/
+background-color:hsla(0, 0%, 96%, 0.39);
+
+  }
   
  .primary {
     color: rgb(12, 12, 12);
     text-align: center;
-    font-style: italic;
+    font-style: inherit;
   }
   
   /* header{
@@ -51,11 +105,11 @@ background-color:whitesmoke;
   .secondary{
        /* text-align: ;*/
         width: 100%;
-       /* padding: 12px 20px;
+        /* padding: 12px 20px;
         margin: 20px 0;
         box-sizing: border-box;
         border: 3px solid black;
-        border-radius: 4px;*/
+        border-radius: 4px; */
         display: flex;
         flex-wrap: wrap;
   }
@@ -76,6 +130,7 @@ background-color:whitesmoke;
  
   .reset{
     text-align: left;
+    
     
     
     }

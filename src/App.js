@@ -8,6 +8,11 @@ import Teacherdashboard from "./pages/teacherdashboard/teacherdashboard";
 import AdminRegisPage from "./containers/Admin/AdminRegisPage/AdminRegisPage";
 import ParentRegisPage from "./containers/Admin/ParentRegisPage/ParentRegisPage";
 import fogotpassword from "./pages/forgotpassword/forgotpassword";
+import StudentRegisPage from "./containers/Admin/StudentRegisPage/StudentRegisPage";
+import TeacherRegisPage from "./containers/Admin/TeacherRegisPage/TeacherRegisPage";
+
+
+
 function App() {
   return (
     <div>
@@ -19,6 +24,8 @@ function App() {
         <Route path="/teacher" component={Teacherdashboard} />
         <Route path="/adminregis" component={AdminRegisPage} />
         <Route path="/parentregis" component={ParentRegisPage} />
+        <Route path="/studentregis" component={StudentRegisPage}/>
+        <Route path="/teacherregis" component={TeacherRegisPage}/>
         <Route path="/forgotpassword" component={fogotpassword} />
       </Router>
     </div>

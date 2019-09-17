@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+ import axios from "axios";
 import AdminNavigationBar from "../../components/AdminNavigationBar/AdminNavigationBar";
 import NewsContainer from "./components/news";
 class Studentdashboard extends Component {
