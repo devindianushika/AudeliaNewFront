@@ -3,7 +3,7 @@ import {Redirect} from 'react-router-dom';
 import AdminNavigationBar from '../../../components/AdminNavigationBar/AdminNavigationBar';
 import  styles from '../../../assets/css/Admin/Register/Register.css';
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 
 
 
@@ -47,39 +47,39 @@ class ParentRegisPage extends Component {
       contactNumber : this.state.contactNumber
     };
 
-//     let confirmPassword = this.state.confirmPassword;
-//     let x = /\bP[0-9]{3}$/.test(user.registrationNumber);  
+    let confirmPassword = this.state.confirmPassword;
+    let x = /\bP[0-9]{3}$/.test(user.registrationNumber);  
 
-//     if((x === true) && (confirmPassword.localeCompare(user.password) === 0)){
-//     console.log(user)
+    if((x === true) && (confirmPassword.localeCompare(user.password) === 0)){
+    console.log(user)
 
-//     // register request
-//     axios
-//     .post('http://localhost:8090/registration/parent',user,'application/json;charset=UTF-8')
-//     .then(res => {
-//         console.log(res);
-//         if(res.data){
-//           this.setState({error:true});
-//           alert("Already registered!");
-//         }else{
-//             alert("Registered!");
-//             this.props.history.push('/registerStudent');
-//         }
-//     })
-//     .catch(err => {
-//       this.setState({error:true})
+    // register request
+    axios
+    .post('http://localhost:8090/registration/parent',user,'application/json;charset=UTF-8')
+    .then(res => {
+        console.log(res);
+        if(res.data){
+          this.setState({error:true});
+          alert("Already registered!");
+        }else{
+            alert("Registered!");
+            this.props.history.push('/registerStudent');
+        }
+    })
+    .catch(err => {
+      this.setState({error:true})
         
-//         console.log(err);
-//     })
+        console.log(err);
+    })
     
-//   }
-//     if(x === false){
-//       alert("Registration number is Invalid format!");
-//     }
+  }
+    if(x === false){
+      alert("Registration number is Invalid format!");
+    }
 
-//     if(confirmPassword.localeCompare(user.password) !== 0){
-//       this.setState({error:true})
-//     }
+    if(confirmPassword.localeCompare(user.password) !== 0){
+      this.setState({error:true})
+    }
     
   }
 
@@ -87,9 +87,10 @@ class ParentRegisPage extends Component {
     if(true){
     return (
       <div><AdminNavigationBar/>
-      <div className={styles.mainform}>
-        <div className={styles.formwrapper}>
-          <h2>PARENT REGISTRATION FORM</h2>
+      <div className={styles.parentmainform}>
+        <div className={styles.parentformwrapper}>
+        <div className={styles.primary}>
+          <h2>PARENT REGISTRATION FORM</h2></div>
           <br />
           <form onSubmit={this.onSubmit}>
             <div className={styles.secondary}>
@@ -233,22 +234,24 @@ class ParentRegisPage extends Component {
               </div>
             
 
-            <div className="submit">
-              <label htmlFor="submit" />
-              <input
-                type="submit"
-                value="Add Parent"
-                className="btn btn-primary"
-              />
+              <div className={styles.reset1}>
+            <div className='submit'>
+            <label htmlFor='submit'>
+            </label><input 
+            type='submit'
+            value='Add Parent'
+            className='btn btn-primary'  />
             </div>
-            <div className={styles.reset1}>
+            </div>
+
+                <div className={styles.reset}>
             <label htmlFor='reset'></label>
             <input className='btn btn-primary' type='reset' value='Reset'
            />
             </div>
             </form>
             <div></div>
-              <Link to="/dashboard">
+              <Link to="/admin">
                 Back
               </Link>
             </div>

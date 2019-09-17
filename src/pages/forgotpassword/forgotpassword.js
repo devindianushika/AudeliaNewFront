@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import "./forgotpassword.css";
 class fogotpassword extends Component {
   state = {
@@ -17,23 +17,23 @@ class fogotpassword extends Component {
     e.preventDefault();
     console.log("inform");
 
-    axios
-      .post("/usr/fogotpassword", { email: this.state.email })
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-        if (res.data === "no_user_found") {
-          console.log("no user found ");
-          this.setState({ errnotfound: true });
-        } else {
-          console.log("email send successfullly");
-          this.setState({ succsee: true });
-        }
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+  //   axios
+  //     .post("/usr/fogotpassword", { email: this.state.email })
+  //     .then(res => {
+  //       console.log(res);
+  //       console.log(res.data);
+  //       if (res.data === "no_user_found") {
+  //         console.log("no user found ");
+  //         this.setState({ errnotfound: true });
+  //       } else {
+  //         console.log("email send successfullly");
+  //         this.setState({ succsee: true });
+  //       }
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+   };
   render() {
     return (
       <div>
