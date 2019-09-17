@@ -41,7 +41,7 @@ class LoginPage extends Component {
               </button>
               <button
                 onClick={() => this.props.history.push("/forgotpassword")}
-                className={styles.forgot_link}
+                className="btn btn-primary"
               >
                 Forgot your username or password
               </button>

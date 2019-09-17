@@ -20,9 +20,29 @@ app.get("/studentdash", (req, res) => {
     name: "dewindi",
     class: "10A",
     subjectsenroled: [
-      { subjectname: "sinhala", meterial: ["assingment 1 ","assingment 51 ","assingment 12 "] },
+      {
+        subjectname: "sinhala",
+        school: " afaeisghlughk ",
+        meterial: ["assingment 1 ", "assingment 51 ", "assingment 12 "]
+      },
       { subjectname: "english", meterial: ["assingment 3 "] }
     ]
+  });
+});
+
+app.get("/teacherdash", (req, res) => {
+  res.json({
+    name: "dewindi madam",
+    classteach: "10A",
+    school: " afaeisghlughk ",
+    subjects: ["sinhala", "english"]
+  });
+});
+
+app.get("/news", (req, res) => {
+  res.json({
+    name: "dewindi madam",
+    news: ["new sylabuss", "new project", "new year"]
   });
 });
 

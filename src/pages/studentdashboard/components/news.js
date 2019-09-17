@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import styles from "../../../assets/css/Admin/NewsContainer/NewsContainer.css";
+import styles from "./news.css";
 import axios from "axios";
 
 class NewsContainer extends Component {
@@ -7,7 +7,7 @@ class NewsContainer extends Component {
     news: []
   };
   componentDidMount() {
-      console.log('news')
+    console.log("news");
     axios.get("/news").then(res => {
       console.log(res.data);
       this.setState({
